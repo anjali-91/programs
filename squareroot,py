@@ -1,0 +1,22 @@
+def square_root(number):
+    if number < 2:
+        return number
+    
+    start, end = 0, number
+    while start <= end:
+        mid = (start + end) // 2
+        mid_squared = mid * mid
+        
+        if mid_squared == number:
+            return mid
+        elif mid_squared < number:
+            start = mid + 1
+            result = mid  
+        else:
+            end = mid - 1
+    
+    return result
+
+number = 16
+result = square_root(number)
+print(f"Integer square root of {number} is {result}")
